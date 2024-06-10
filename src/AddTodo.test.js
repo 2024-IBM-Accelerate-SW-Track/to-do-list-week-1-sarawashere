@@ -1,6 +1,7 @@
 import { render, screen, fireEvent} from '@testing-library/react';
 import { unmountComponentAtNode } from 'react-dom';
 import App from './App';
+import { Button, TextField } from "@mui/material";
 
 let container = null;
 beforeEach(() => {
@@ -16,8 +17,24 @@ afterEach(() => {
   container = null;
 });
 
-
-
+render(() => {    
+  <div>
+      <TextField
+        label="Add New Item"
+        variant="outlined"
+        //onChange={call handleChange here}
+        //value={set the content state here}
+        />
+      <Button
+        style={{ marginLeft: "10px" }}
+        //onClick={call handleSubmit here}
+        variant="contained"
+        color="primary"
+      >
+      Add
+      </Button>
+  </div>
+});
 
  test('test that App component doesn\'t render dupicate Task', () => {
   render(<App />);
